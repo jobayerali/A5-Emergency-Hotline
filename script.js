@@ -3,7 +3,7 @@ let loveCount = 0;
         let copyCount = 0;
 
         // love button
-        document.querySelectorAll(".fa-heart").forEach(btn => {
+        document.querySelectorAll(".heart-btn").forEach(btn => {
             btn.addEventListener("click", () => {
                 loveCount++;
                 document.getElementById("loveCount").textContent = loveCount;
@@ -14,11 +14,13 @@ let loveCount = 0;
         // copy button
         document.querySelectorAll(".copyBtn") .forEach(copyBtn => {
             copyBtn.addEventListener("click", (e)=> {
-                const number = e.target.closest(".bg-white").querySelector(".text-2xl").textContent;
+                const card = copyBtn.closest(".copy-card");
+                const number = card.querySelector(".add-copy").textContent.trim();
                 navigator.clipboard.writeText(number);
                 copyCount++;
                 document.getElementById("copyCount").textContent = copyCount;
-            
+                alert("Text copied: " + number);
+                
             });
         });
 
@@ -30,7 +32,7 @@ callButtons.forEach(function(callBtn){
     callBtn.addEventListener("click", function(e){
         if(coinCount >= 20){
 
-            let card = e.target.closest(".bg-white");
+            let card = e.target.closest(".call-btn");
             let name = card.querySelector(".service-name").textContent;
             let number = card.querySelector(".ph-number").textContent;
             alert("Calling " + name + " (" + number + ") ...");
@@ -43,7 +45,7 @@ callButtons.forEach(function(callBtn){
             li.textContent = name + " - " + number + " (" + new Date().toLocaleTimeString() + ")";
             historyList.prepend(li);
         } else {
-            alert("Not enough coins!");
+            alert("Not enough coins!" + number );
         }
     });
 });
