@@ -228,51 +228,8 @@
 
         
      </main>
-
-     <!-- <script>
-        let loveCount = 0;
-        let coinCount = 100;
-        let copyCount = 0;
-
-        // love button
-        document.querySelector(".loveBtn").addEventListener("click", () =>{
-            loveCount++;
-            document.getElementById("loveCount").textContent = loveCount;
-        });
-        // copy button
-                document.querySelector(".copyBtn").addEventListener("click", () => {
-                    const number = document.querySelector(".phoneNumber").textContent;
-                    navigator.clipboard.writeText(number)
-                    copyCount++;
-                    document.getElementById("copyCount").textContent = copyCount;
-                    alert("Number Copied: " + number);
-                });
-
-        // call button
-        document.querySelector(".callBtn").addEventListener("click", () => {
-            if( coinCount >= 20){
-                alert("Calling....");
-                coinCount -= 20;
-                document.getElementById("coinCount").textContent = coinCount;                
-            
-                // add to call history
-                const historyList = document.getElementById("historyList");
-                const li = document.createElement("li")
-                li.textContent = "police - 9999 ("+ new Date().toLocaleTimeString( ) +")";
-                historyList.prepend(li);
-            }
-            else {
-                alert("Not enough coins!")
-            }
-        });
-
-        // callar history
-        document.getElementById("clearHistory").addEventListener("click", () => {
-            document.getElementById("historyList").innerHTML = "";
-        });
-        
-
-     </script> -->
+    
+    
      <script src="script.js"></script>
 </body>
 </html>
